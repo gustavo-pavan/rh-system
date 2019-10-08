@@ -1,0 +1,44 @@
+.body {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+@mixin three() {
+    width: calc(100% / 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 4px;
+    box-sizing: border-box;
+    border: 1px solid;
+}
+.row-1 {
+  @include three;
+}
+.row-2 {
+  @include three;
+}
+.row-3 {
+  @include three;
+}
+.row-4 {
+  @include three;
+}
+.gp-group{
+    width: 100%;
+    height: 35px;
+}
+.gp-group > input {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  outline: none;
+}
+.ul-list{
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+}

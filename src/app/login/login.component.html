@@ -1,0 +1,35 @@
+<header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../../assets/logo.png" alt="">
+            </div>
+        </nav>
+    
+        <div class="container">
+            <div class="card">
+                <div class="header">
+                    <img src="../../assets/login.png" alt="">
+                </div>
+                <div class="bd-form">
+                    <form class="container-frm">
+                        <div class="gp-form">
+                            <input id="email" type="text" class="ctrl-form">
+                            <label for="email" class="lbl-form">Email</label>
+                        </div>
+                        <div class="gp-form">
+                            <input id="paswd" type="text" class="ctrl-form">
+                            <label for="paswd" class="lbl-form">Password</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="fgt-pwd">
+                    <span>Forgot password?</span>
+                </div>
+    
+                <div class="btn-form">
+                    <button [routerLink]="['/dashboard']" >GO</button>
+                </div>
+            </div>
+        </div>
+    
+    </header>

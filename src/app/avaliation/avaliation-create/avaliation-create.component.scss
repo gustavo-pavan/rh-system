@@ -1,0 +1,152 @@
+$primary: #7e7e7e;
+$secondary: #e78200;
+$ligth: #b7b5b5;
+
+.container {
+  height: 300px;
+}
+.rounded {
+  width: 35px;
+  height: 35px;
+  border: 4px solid #e78200;
+  text-align: center;
+  line-height: 3px;
+  border-radius: 50%;
+  font-weight: bold;
+  color: $ligth;
+  cursor: pointer;
+  transition: ease-in 0.3s;
+  &:hover {
+    background: $secondary;
+    color: #fff;
+    box-shadow: 0px 0px 14px 0px #a09e9e;
+  }
+}
+
+.rounded-active {
+  background: $secondary;
+  color: #fff;
+  box-shadow: 0px 0px 14px 0px #a09e9e;
+}
+
+.row-1 {
+  display: flex;
+  justify-content: center;
+  height: 63px;
+  align-items: center;
+  margin-top: 25px;
+}
+.line {
+  width: 100px;
+  height: 3px;
+  background: $primary;
+  border-radius: 10px;
+  margin: 9px;
+}
+.card {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0px 0px 12px 1px #ddd;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 18px;
+  margin-top: 50px;
+  transition: linear .5s;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  & > img {
+    width: 50px;
+    height: 50px;
+  }
+  & > h2 {
+    color: $primary;
+    padding: 0;
+    margin: 0;
+  }
+  & > p {
+    color: $primary;
+    padding: 0;
+    margin: 0;
+  }
+}
+.line-tab {
+  width: 70%;
+  height: 2px;
+  background: #ddd;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.fr-inpt {
+  width: 40%;
+  margin: auto;
+  & > input {
+    width: 100%;
+    height: 35px;
+    background: #ddd;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    text-align: center;
+    color: $primary;
+  }
+}
+.btn {
+  display: flex;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-top: 10px;
+  & > div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & > button {
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: none;
+    background: $ligth;
+    transition: linear 0.5s;
+    cursor: pointer;
+    &:hover,
+    &:focus,
+    &:active {
+      background: $secondary;
+      color: $primary;
+      box-shadow: 0px 0px 14px 0px #a09e9e;
+    }
+    & > i {
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+}
+.btn-finish {
+  width: 30%;
+  height: 40px;
+  border: none;
+  font-size: 19px;
+  font-weight: 800;
+  color: #FFF;
+  background: $ligth;
+  transition: linear 0.5s;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:active {
+    background: $secondary;
+    color: #FFF;
+    box-shadow: 0px 0px 14px 0px #a09e9e;
+  }
+}

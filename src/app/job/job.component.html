@@ -1,0 +1,21 @@
+<div class="body">
+    <div class="scene scene--card" (click)="toogle(1)">
+        <div class="card" [ngClass]="{'scene-flip': flip == 1}">
+            <div class="card_face card_face--front">
+                <img src="../../assets/new.jpg" alt="">
+            </div>
+            <div class="card_face card_face--back">
+                <div class="header">
+                    <img src="../../assets/tipe.png" alt="">
+                    <h2>Avaliation</h2>
+                </div>
+                <div class="message">
+                    <p>Create new <b>Avaliation</b> for capacitation</p>
+                </div>
+                <div class="btn">
+                    <button routerLinkActive="active" [routerLink]="['../create']">GO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

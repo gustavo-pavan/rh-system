@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row-1" [ngClass]="{'menu-low-row-1': menu}">
+        <nav class="navbar">
+            <button (click)="sidemenu()"><i class="material-icons">menu</i></button>
+            <div class="search-navbar">
+                <div class="bd-search">
+                    <button class="btn-search" [ngClass]="{'btn-active': search_toogle}" (click)="toogle()"><i
+                            class="material-icons">search</i></button>
+                    <input *ngIf="search_toogle" type="text" [ngClass]="{'inpt-wdth': search_toogle}">
+                    <button class="btn-search"><i class="material-icons">email</i></button>
+                    <button class="btn-search"><i class="material-icons">person_add</i></button>
+                </div>
+            </div>
+            <img src="../../assets/logo.png" alt="">
+        </nav>
+
+        <div class="content" [ngClass]="{'content-split': !menu}">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="row-2" [ngClass]="{'menu-low': menu}">
+        <div class="menu-full">
+            <div class="header" *ngIf="!menu">
+                <div class="logo-mn">
+                    <img src="../../assets/logo.png" *ngIf="!menu" alt="">
+                    <img src="../../assets/tipe.png" *ngIf="menu" alt="">
+                </div>
+                <div *ngIf="!menu">
+                    <div class="profile">
+                        <img src="../../assets/profile.jpg" alt="">
+                    </div>
+                    <div class="name-pro">
+                        <h4>RH-Open</h4>
+                        <p>ADM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-li">
+                <ul>
+                    <li routerLinkActive="active" [routerLink]="['home']">
+                        <i class="material-icons">home</i>
+                        <a href="" *ngIf="!menu">Home</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLink]="['department']">
+                        <i class="material-icons">contacts</i>
+                        <a href="" *ngIf="!menu">Department</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLink]="['job']">
+                        <i class="material-icons">import_contacts</i>
+                        <a href="" *ngIf="!menu">Jobs</a>
+                    </li>
+                    <li routerLinkActive="active" [routerLink]="['avaliation']">
+                        <i class="material-icons">file_copy</i>
+                        <a href="" *ngIf="!menu">Avaliation</a>
+                    </li>
+                    <li>
+                        <i class="material-icons">work</i>
+                        <a href="" *ngIf="!menu">Work</a>
+                    </li>
+                    <li>
+                        <i class="material-icons">chat_bubble</i>
+                        <a href="" *ngIf="!menu">Chat</a>
+                    </li>
+                    <li>
+                        <i class="material-icons">chat_bubble</i>
+                        <a href="" *ngIf="!menu">Chat</a>
+                    </li>
+                    <li>
+                        <i class="material-icons">chat_bubble</i>
+                        <a href="" *ngIf="!menu">Chat</a>
+                    </li>
+                    <li>
+                        <i class="material-icons">chat_bubble</i>
+                        <a href="" *ngIf="!menu">Chat</a>
+                    </li>
+                    <li>
+                        <i class="material-icons">chat_bubble</i>
+                        <a href="" *ngIf="!menu">Chat</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>

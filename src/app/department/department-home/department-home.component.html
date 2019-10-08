@@ -1,0 +1,26 @@
+<div class="body">
+        <div class="scene scene--card" (click)="toogle(1)">
+            <div class="card" [ngClass]="{'scene-flip': flip == 1}">
+                <div class="card_face card_face--front">
+                    <img src="../../assets/department.gif" alt="">
+                </div>
+                <div class="card_face card_face--back">
+                    <div class="header">
+                        <img src="../../assets/tipe.png" alt="">
+                        <h2>Department</h2>
+                    </div>
+                    <div class="message">
+                        <p>View your portfolio in <b>Department</b> </p>
+                    </div>
+                    <div class="btn">
+                        <button routerLinkActive="active">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="new--card">
+            <button class="material-icons" [routerLink]="['../create']">add_circle</button>
+            <p>New Department</p>
+        </div>
+    </div>

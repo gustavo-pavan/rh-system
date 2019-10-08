@@ -1,0 +1,56 @@
+<div class="header">
+
+    <div *ngFor="let seq of position; let i = index">
+        <div class="rounded" [ngClass]="{'rounded-active': (seq.sequence == sequence || seq.sequence < sequence)}">
+        </div>
+        <div class="line" *ngIf="(seq.sequence < position.length)"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row-1" *ngIf="sequence">
+        <div class="row-cont-1">
+            <div class="title">
+                <input type="text" placeholder="Title" name="title"
+                    [value]="(valueTitle === undefined) ? 'Title' : valueTitle" id="name" #inpt_title>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-2" *ngIf="sequence">
+        <div class="content">
+            <div class="body">
+                <ul class="bd-aval">
+                    <li [ngClass]="{'dbl--click': (dblclick && selected == item.sequence)}"
+                        *ngFor="let item of avaliation">
+                        <input type="text" #inpt_value name="{{ item.sequence }}" value="{{ item.question }}">
+                        <div class="bolclick" (click)="select( item.sequence )"
+                            [ngClass]="{'bolclick--active': (dblclick && selected == item.sequence) }"></div>
+                        <div class="switch_box box_2">
+                            <input [checked]="item.validation" type="checkbox" #check_inpt value="{{ item.validation }}"
+                                name="{{ item.sequence }}" class="switch_2">
+                        </div>
+                    </li>
+                </ul>
+                <div>
+                    <button class="btn-add" (click)="addAvaliation()"><i class="material-icons">add</i></button>
+                    <button class="btn-add" *ngIf="avaliation.length > 0 && sequence < id" (click)="next()"><i
+                            class="material-icons">keyboard_arrow_right</i></button>
+                    <button class="btn-add" *ngIf="avaliation.length > 0 && sequence == id" (click)="finish()"><i
+                            class="material-icons">done</i></button>
+                    <button class="btn-add" *ngIf="system.length > 0 && sequence > 1" (click)="back()"><i
+                            class="material-icons">keyboard_arrow_left</i></button>
+                    <button class="btn-add" (click)="delete()" [ngClass]="{'btn-add--active': selected}"
+                        *ngIf="avaliation.length > 0"><i class="material-icons">delete</i></button>
+                </div>
+            </div>
+        </div>
+        <div class="keys" *ngIf="dblclick">
+            <button>
+                <i class="material-icons" (click)="moveup()">keyboard_arrow_up</i>
+            </button>
+            <button>
+                <i class="material-icons" (click)="movedown()">keyboard_arrow_down</i>
+            </button>
+        </div>
+    </div>
+</div>

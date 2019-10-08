@@ -1,0 +1,84 @@
+$primary: #7e7e7e;
+$secondary: #e78200;
+$ligth: #b7b5b5;
+
+.container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.scene {
+  width: 250px;
+  height: 250px;
+  border: 1px solid #ccc;
+  margin: 40px 0;
+  perspective: 600px;
+  border: none;
+  padding: 4px;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+.scene-flip {
+  transform: rotateY(180deg);
+}
+.card_face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0px 0px 11px -1px #ddd;
+  border-radius: 3px;
+}
+
+.card_face--front {
+  width: 250px;
+  height: 250px;
+  & > img {
+    width: 250px;
+    height: 250px;
+    object-fit: unset;
+  }
+}
+
+.card_face--back {
+  transform: rotateY(180deg);
+}
+.card_face--back{
+    color: $primary;
+}
+.message > p > b{
+    color: $secondary;
+}
+.btn {
+    width: 70%;
+    margin: auto;
+    margin-top: 15px;
+    & > button {
+      width: 100%;
+      height: 40px;
+      border: none;
+      font-size: 19px;
+      font-weight: 800;
+      color: $secondary;
+      background: $ligth;
+      transition: linear 0.5s;
+      cursor: pointer;
+      &:hover, &:focus, &:active {
+        background: $secondary;
+        color: $primary;
+        box-shadow: 0px 0px 14px 0px #a09e9e;
+      }
+    }
+  }

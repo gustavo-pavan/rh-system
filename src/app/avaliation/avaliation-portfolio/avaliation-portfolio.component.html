@@ -1,0 +1,45 @@
+<div class="change-view">
+    <button class="material-icons" (click)="viewList()">dashboard</button>
+</div>
+<div class="body">
+    <div *ngIf="!view_list">
+        <div class="scene scene--card" (click)="toogle(i + 1)" *ngFor="let item of data; let i = index">
+            <div class="card" [ngClass]="{'scene-flip': flip == ( i + 1)}">
+                <div class="card_face card_face--front">
+                    <img src="../../assets/{{ item.photo }}" alt="">
+                </div>
+                <div class="card_face card_face--back">
+                    <div class="header">
+                        <img src="../../assets/tipe.png" alt="">
+                        <h4>{{ item.title }}</h4>
+                    </div>
+                    <div class="btn">
+                        <button routerLinkActive="active" [routerLink]="['../config-edit', i]">EDIT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="view_list" class="bd-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Cod</th>
+                    <th>Title</th>
+                    <th>Sequence</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data; let i = index">
+                    <td>{{ i }}</td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ i }}</td>
+                    <th><button class=" btn-list material-icons" [routerLink]="[ '../config-edit', i ]">edit</button></th>
+                    <th><button class=" btn-list material-icons">delete</button></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

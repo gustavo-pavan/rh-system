@@ -1,0 +1,99 @@
+<div class="row-1">
+    <div class="rounded" [ngClass]="{'rounded-active': (tab === 1 || tab === 2 || tab === 3 || tab == 4)}">
+        <p>1</p>
+    </div>
+    <div class="line"></div>
+    <div class="rounded" [ngClass]="{'rounded-active': (tab === 2 || tab === 3 || tab == 4)}">
+        <p>2</p>
+    </div>
+    <div class="line"></div>
+    <div class="rounded" [ngClass]="{'rounded-active': (tab === 3 || tab === 4)}">
+            <p>3</p>
+        </div>
+    <div class="line"></div>
+    <div class="rounded" [ngClass]="{'rounded-active': tab === 4}">
+        <p>4</p>
+    </div>
+</div>
+<div class="container" [ngSwitch]="tab">
+    <div class="card" *ngSwitchCase="1">
+        <div class="header">
+            <img src="../../../assets/tipe.png" alt="">
+            <h2>What is the name?</h2>
+        </div>
+        <div class="line-tab"></div>
+        <div class="fr-inpt">
+            <input type="text">
+        </div>
+        <div class="btn">
+            <!-- <button (click)="tabs(1)"> 
+                    <i class="material-icons">navigate_before</i>
+                </button> -->
+            <div></div>
+            <button (click)="tabs(2)">
+                <i class="material-icons">navigate_next</i>
+            </button>
+        </div>
+    </div>
+    <div class="card" *ngSwitchCase="2">
+        <div class="header">
+            <img src="../../../assets/tipe.png" alt="">
+            <h2>How many questions?</h2>
+        </div>
+        <div class="line-tab"></div>
+        <div class="fr-inpt">
+            <input type="number">
+        </div>
+        <div class="btn">
+            <button (click)="tabs(1)">
+                <i class="material-icons">navigate_before</i>
+            </button>
+            <div></div>
+            <button (click)="tabs(3)">
+                <i class="material-icons">navigate_next</i>
+            </button>
+        </div>
+    </div>
+
+    <div class="card" *ngSwitchCase="3">
+            <div class="header">
+                <img src="../../../assets/tipe.png" alt="">
+                <h2>How Time?</h2>
+            </div>
+            <div class="line-tab"></div>
+            <div class="fr-inpt">
+                <input type="number">
+            </div>
+            <div class="btn">
+                <button (click)="tabs(2)">
+                    <i class="material-icons">navigate_before</i>
+                </button>
+                <div></div>
+                <button (click)="tabs(4)">
+                    <i class="material-icons">navigate_next</i>
+                </button>
+            </div>
+        </div>
+
+    <div class="card" *ngSwitchCase="4">
+        <div class="header">
+            <img src="../../../assets/tipe.png" alt="">
+            <h2>Dou you finish?</h2>
+        </div>
+        <div class="line-tab"></div>
+        <div class="header">
+            <h2>Why leave other job?</h2>
+            <p>Questions: <strong>20</strong></p>
+        </div>
+
+        <div class="btn">
+            <button (click)="tabs(2)">
+                <i class="material-icons">navigate_before</i>
+            </button>
+            <div>
+                <button class="btn-finish" [routerLink]="['../config', value]">Finish</button>
+            </div>
+            <span style="width: 40px"></span>
+        </div>
+    </div>
+</div>
