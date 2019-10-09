@@ -10,6 +10,8 @@ $ligth: #b7b5b5;
   width: 100%;
   height: 100%;
   align-items: center;
+  overflow-y: scroll;
+  padding-top: 20px;
 }
 .card > h3{
   font-family: "Source Sans Pro", sans-serif;
@@ -40,6 +42,7 @@ $ligth: #b7b5b5;
   border-radius: 5px;
   padding: 20px 10px 20px 10px;
   box-sizing: border-box;
+  max-height: 500px;
 }
 .card-fixed {
   @include card(150px);
@@ -72,8 +75,11 @@ $ligth: #b7b5b5;
   border: 1px solid rgba(0, 0, 0, 0.2);
   color: $ligth;
   &:focus{
-    border: transparent;
     box-shadow: 0px 0px 2px 0px $secondary;
+  }
+  &:read-only{
+    box-shadow: none;
+    background: #ecebeb;
   }
 }
 .gp-group--active{
@@ -84,6 +90,9 @@ $ligth: #b7b5b5;
   padding: 0;
   width: 100%;
   margin: 0;
+  max-width: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden
 }
 .box-select{
   width: 12px;
@@ -113,9 +122,9 @@ $ligth: #b7b5b5;
 }
 .btn-ar > button{
   border: none;
-  background: none;
   width: 25px;
   height: 25px;
+  border-radius: 50%;
   font-size: 25px;
   text-align: center;
   padding: 0;
@@ -134,28 +143,49 @@ $ligth: #b7b5b5;
 }
 
 .btn  > button {
+  margin: 3px;
   border: none;
-  background: none;
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
+  background: $ligth;
+  width: 25px;
+  height: 25px;
+  font-size: 15px;
+  border-radius: 50%;
   text-align: center;
   padding: 0;
-  color: $ligth;
+  color: #fff;
   cursor: pointer;
   transition: linear 0.5s;
   border-radius: 50%;
   outline: none;
   &:last-child:hover {
-    color: $secondary;
+    background: $secondary;
     box-shadow: 0px 0px 30px 2px #ddd;
     transform: rotate(45deg);
   }
-  &:first-child:hover {
-    color: $secondary;
+  &:hover {
+    background: $secondary;
     box-shadow: 0px 0px 30px 2px #ddd;
-    font-size: 30.5px;
+    font-size: 15.5px;
   }
 
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

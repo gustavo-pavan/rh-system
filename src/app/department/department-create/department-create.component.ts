@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./department-create.component.scss']
 })
 export class DepartmentCreateComponent implements OnInit {
-  salary: ISalary = {id: 1, salary: 1000.00, function: 1}
+  salary: ISalary 
+  // {id: 1, salary: 1000.00, function: 1}
   department: IDepartment = {name: 'Tecnology', id: 1}
   sector:ISector[] = [
     // {name: 'Developer Assitent', id: 1, department: 1},
@@ -60,6 +61,10 @@ export class DepartmentCreateComponent implements OnInit {
       this.func.splice(this.func.indexOf(element), 1);      
     });
     this.selectedFunct = []
+  }
+
+  addSalary(){
+    this.salary = {id: 0, salary: 0, function: 0}
   }
 }
 export interface ISector {
