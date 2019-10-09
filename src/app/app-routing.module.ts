@@ -12,6 +12,8 @@ import { JobComponent } from './job/job.component';
 import { DepartmentCreateComponent } from './department/department-create/department-create.component';
 import { DepartmentHomeComponent } from './department/department-home/department-home.component';
 import { DepartmentComponent } from './department/department.component';
+import { JobHomeComponent } from './job/job-home/job-home.component';
+import { JobCreateComponent } from './job/job-create/job-create.component';
 
 
 const routes: Routes = [
@@ -36,7 +38,11 @@ const routes: Routes = [
         {path: 'home', component: DepartmentHomeComponent},
         {path: 'create', component: DepartmentCreateComponent}
       ]},
-      {path: 'job', component: JobComponent}
+      {path: 'job', component: JobComponent, children:[
+        {path: '', pathMatch: 'full', redirectTo:'home'},
+        {path: 'home', component: JobHomeComponent},
+        {path: 'create', component: JobCreateComponent}
+      ]}
     ]
   }
 ];
