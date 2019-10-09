@@ -1,18 +1,51 @@
+$primary: #7e7e7e;
+$secondary: #e78200;
+$ligth: #b7b5b5;
+
 .body {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   position: absolute;
   width: 100%;
   height: 100%;
+  align-items: center;
+}
+.card > h3{
+  font-family: "Source Sans Pro", sans-serif;
+  color: $secondary
+}
+.card-fixed > h3{
+  font-family: "Source Sans Pro", sans-serif;
+  color: $secondary
 }
 @mixin three() {
-    width: calc(100% / 4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 4px;
-    box-sizing: border-box;
-    border: 1px solid;
+  width: calc(100% / 4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 4px;
+  box-sizing: border-box;
+}
+
+@mixin card($height) {
+  min-height: #{$height};
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 11px 1px #ddd;
+  background: #fdfdfd;
+  border-radius: 5px;
+  padding: 20px 10px 20px 10px;
+  box-sizing: border-box;
+}
+.card-fixed {
+  @include card(150px);
+}
+.card {
+  @include card(auto);
 }
 .row-1 {
   @include three;
@@ -26,19 +59,103 @@
 .row-4 {
   @include three;
 }
-.gp-group{
-    width: 100%;
-    height: 35px;
+.gp-group {
+  width: 100%;
+  height: 35px;
+  position: relative;
 }
 .gp-group > input {
   width: 100%;
   height: 100%;
-  font-size: 20px;
+  font-size: 16px;
   outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: $ligth;
+  &:focus{
+    border: transparent;
+    box-shadow: 0px 0px 2px 0px $secondary;
+  }
 }
-.ul-list{
-    list-style: none;
-    padding: 0;
-    width: 100%;
-    margin: 0;
+.gp-group--active{
+  box-shadow: 0px 0px 10px 2px #DDD;
 }
+.ul-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+.box-select{
+  width: 12px;
+  height: 12px;
+  background: $ligth;
+  border-radius: 50%;
+  position: absolute;
+  right: 3px;
+  top: 14px;
+  cursor: pointer;
+  &:hover{
+    background: $secondary;
+    box-shadow: 0px 0px 15px 1px $secondary;
+  }
+}
+.box-select--active{
+  background: $secondary;
+  box-shadow: 0px 0px 15px 1px $secondary;
+}
+.btn{
+  align-self: flex-end;
+  margin-top: 20px;
+}
+.btn-ar{
+  align-self: flex-end;
+  margin-top: 20px;
+}
+.btn-ar > button{
+  border: none;
+  background: none;
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  text-align: center;
+  padding: 0;
+  background: $ligth;
+  cursor: pointer;
+  transition: linear 0.5s;
+  border-radius: 50%;
+  outline: none;
+  color: #FFF;
+  &:hover {
+    background: $secondary;
+    box-shadow: 0px 0px 30px 2px #ddd;
+    font-size: 25.5px;
+    color: #FFF;
+  }
+}
+
+.btn  > button {
+  border: none;
+  background: none;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  text-align: center;
+  padding: 0;
+  color: $ligth;
+  cursor: pointer;
+  transition: linear 0.5s;
+  border-radius: 50%;
+  outline: none;
+  &:last-child:hover {
+    color: $secondary;
+    box-shadow: 0px 0px 30px 2px #ddd;
+    transform: rotate(45deg);
+  }
+  &:first-child:hover {
+    color: $secondary;
+    box-shadow: 0px 0px 30px 2px #ddd;
+    font-size: 30.5px;
+  }
+
+}
+

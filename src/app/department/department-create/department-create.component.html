@@ -1,61 +1,64 @@
-
 <div class="body">
     <div class="row-1">
-        <div class="gp-group">
-            <input type="text">
+        <div class="card-fixed">
+            <h3 for="Department">Department</h3>
+            <div class="gp-group">
+                <!-- <div class="box-select"></div> -->
+                <input type="text" [value]="department.name">
+            </div>
+            <div class="btn-ar" *ngIf="sector.length == 0">
+                <button class="material-icons" (click)="addSector()">keyboard_arrow_right</button>
+            </div>
         </div>
     </div>
-    <div class="row-2">
-        <ul class="ul-list">
-            <li>
-                <div class="gp-group">
-                    <input type="text">
-                </div>
-            </li>
-            <li>
-                <div class="gp-group">
-                    <input type="text">
-                </div>
-            </li>
-            <li>
-                <div class="gp-group">
-                    <input type="text">
-                </div>
-            </li>
-            <li>
-                <div class="gp-group">
-                    <input type="text">
-                </div>
-            </li>
-        </ul>
+    <div class="row-2" *ngIf="sector.length > 0">
+        <div class="card" >
+            <h3 for="Sector">Sector</h3>
+            <ul class="ul-list">
+                <li *ngFor="let item of sector; let i = index">
+                    <div class="gp-group">
+                        <div class="box-select" (click)="selectedSectors(item)"
+                            [ngClass]="{'box-select--active': (selectedSector.indexOf( item ) > -1)}"></div>
+                        <input type="text" name="{{ item.id }}" [value]="item.name"
+                            [ngClass]="{'gp-group--active': (selectedSector.indexOf( item ) > -1)}">
+                    </div>
+                </li>
+            </ul>
+            <div class="btn">
+                <button class="material-icons" (click)="removeSector()"
+                    *ngIf="selectedSector.length > 0">delete</button>
+                <button class="material-icons" (click)="addSector()">add_circle</button>
+            </div>
+        </div>
     </div>
-    <div class="row-3">
-        <ul class="ul-list">
-            <li>
-                <div class="gp-group">
-                    <input type="text">
-                </div>
-            </li>
-            <li>
-                <div class="gp-group">
-                    <input type="text">
-                </div>
-            </li>
-            <li>
-                <div class="gp-group">
-                    <input type="text">
-                </div>
-            </li>
-            <li>
-                <div class="gp-group">
-                    <input type="text">
-                </div>
-            </li>
-        </ul>
+    <div class="row-3" *ngIf="func.length > 0">
+        <div class="card">
+            <h3 for="Function">Function</h3>
+            <ul class="ul-list">
+                <li *ngFor="let item of func; let i = index">
+                    <div class="gp-group">
+                        <div class="box-select" (click)="selectedFunc(item)"
+                            [ngClass]="{'box-select--active': (selectedFunct.indexOf( item ) > -1)}"></div>
+                        <input type="text" name="{{ item.id }}" [value]="item.name"
+                            [ngClass]="{'gp-group--active': (selectedFunct.indexOf( item ) > -1)}">
+                    </div>
+                </li>
+            </ul>
+            <div class="btn">
+                <button class="material-icons" (click)="removeFunction()"
+                    *ngIf="selectedFunct.length > 0">delete</button>
+                    <button class="material-icons" (click)="addSector()">keyboard_arrow_right</button>
+                <button class="material-icons" (click)="addFunction()">add_circle</button>
+            </div>
+        </div>
     </div>
     <div class="row-4">
-        <div class="gp-group">
-            <input type="text">
+        <div class="card-fixed">
+            <h3 for="Sector">Salary</h3>
+            <div class="gp-group">
+                <div class="box-select"></div>
+                <input type="text" [value]="salary.salary">
+            </div>
         </div>
     </div>
 </div>
