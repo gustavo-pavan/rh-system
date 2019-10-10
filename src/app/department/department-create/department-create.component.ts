@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IFunction, ISector, IDepartment, ISalary } from '../department.model';
 
 @Component({
   selector: 'rh-department-create',
@@ -67,25 +68,7 @@ export class DepartmentCreateComponent implements OnInit {
     this.salary = {id: 0, salary: 0, function: 0}
   }
 }
-export interface ISector {
-  department: number
-  name: string
-  id: number
-}
-export interface IDepartment {
-  name: string
-  id: number
-}
-export interface IFunction {
-  sector: number
-  name: string
-  id: number
-}
-export interface ISalary{
-  salary: number | string
-  function: number
-  id: number
-}
+
 //Nivel herarquico
 //Department
 //Sector

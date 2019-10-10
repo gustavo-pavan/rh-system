@@ -39,10 +39,10 @@ const routes: Routes = [
         {path: 'create', component: DepartmentCreateComponent}
       ]},
       {path: 'job', component: JobComponent, children:[
-        {path: '', pathMatch: 'full', redirectTo:'home'},
+        {path: '', pathMatch:'full', redirectTo: 'home'},
         {path: 'home', component: JobHomeComponent},
         {path: 'create', component: JobCreateComponent}
-      ]}
+      ]},
     ]
   }
 ];

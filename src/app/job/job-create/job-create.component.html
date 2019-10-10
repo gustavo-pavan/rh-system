@@ -1,11 +1,56 @@
-<div class="body">
-    <div class="header">
-        <div>
-                <button class="material-icons">menu</button>
-                <div class="menu">
-                  
+<div class="header">
+        <div class="gpp">
+        <div class="group">
+            <div class="select-menu" (click)="openMenu(1)" [ngClass]="{'active--button': menu == 1}">
+                <i class="material-icons">scatter_plot</i>
+                <span>{{(lblDepartment != null) ? lblDepartment : 'Department' }}</span>
+            </div>
+            <div class="menu" [ngClass]="{'open--menu': menu == 1}">
+                <div class="gp-search">
+                    <button class="material-icons">search</button>
+                    <input type="text" (keyup)="searchDepartment($event.target.value)">
                 </div>
+                <ul class="list">
+                    <li *ngFor="let item of department" (click)="selDepartment(item.name)">{{ item.name }}</li>
+                </ul>
+            </div>
         </div>
+        <div class="group">
+            <div class="select-menu" (click)="openMenu(2)" [ngClass]="{'active--button': menu == 2}">
+                <i class="material-icons">scatter_plot</i>
+                <span>Sector</span>
+            </div>
+            <div class="menu" [ngClass]="{'open--menu': menu == 2}">
+                <div class="gp-search">
+                    <button class="material-icons">search</button>
+                    <input type="text">
+                </div>
+    
+                <ul class="list">
+                    <li>Sector</li>
+                </ul>
+            </div>
+        </div>
+        <div class="group">
+            <div class="select-menu" (click)="openMenu(3)" [ngClass]="{'active--button': menu == 3}">
+                <i class="material-icons">scatter_plot</i>
+                <span>Function</span>
+            </div>
+            <div class="menu" [ngClass]="{'open--menu': menu == 3}">
+                <div class="gp-search">
+                    <button class="material-icons">search</button>
+                    <input type="text">
+                </div>
+    
+                <ul class="list">
+                    <li>Function</li>
+                </ul>
+            </div>
+        </div>
+</div>
+</div>
+<div class="body">
+    <div class="row-1">
+
     </div>
 </div>
-
