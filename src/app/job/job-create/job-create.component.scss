@@ -3,14 +3,15 @@ $secondary: #e78200;
 $ligth: #b7b5b5;
 
 .header {
-    position: fixed;
-    width: 100%;
-    height: 75px;
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  z-index: 99;
 }
-.gpp{    
-    width: 68%;
-    height: 100%;
-    margin: auto;
+.gpp {
+  width: 68%;
+  height: 100%;
+  margin: auto;
 }
 .select-menu {
   width: 300px;
@@ -29,7 +30,7 @@ $ligth: #b7b5b5;
   &:active {
     background: $secondary;
     box-shadow: 0px 0px 14px 1px $primary;
-  } 
+  }
 }
 .group {
   display: flex;
@@ -54,7 +55,7 @@ $ligth: #b7b5b5;
   margin-top: 21px;
   box-shadow: 0px 0px 14px 1px #ddd;
   display: none;
-  transition: ease-out .5s;
+  transition: ease-out 0.5s;
 }
 .menu:after {
   content: "";
@@ -69,20 +70,24 @@ $ligth: #b7b5b5;
   border-bottom: 30px solid #fdfdfd;
   border-radius: 50%;
 }
-.open--menu{
-    display: block;
-    animation: open;
-    animation-duration: .5s;
+.open--menu {
+  display: block;
+  animation: open;
+  animation-duration: 0.5s;
 }
 
-@keyframes open{
-    from{height: 0;}
-    to{height: 300px;}
+@keyframes open {
+  from {
+    height: 0;
+  }
+  to {
+    height: 300px;
+  }
 }
 
-.active--button{
-    background: $secondary;
-    box-shadow: 0px 0px 14px 1px $primary;
+.active--button {
+  background: $secondary;
+  box-shadow: 0px 0px 14px 1px $primary;
 }
 
 .gp-search {
@@ -136,16 +141,144 @@ $ligth: #b7b5b5;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     // border-left: 1px solid rgba(0, 0, 0, 0.2);
     // border-right: 1px solid rgba(0, 0, 0, 0.2);
-    transition: ease-out .2s;
-    &:hover{
-        background: rgba(0, 0, 0, 0.1);
-        color: $primary;
+    transition: ease-out 0.2s;
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+      color: $primary;
     }
   }
-  & > li:last-child{
+  & > li:last-child {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  } 
+  }
+}
 
+.body {
+  width: 100%;
+  padding-top: 10px;
+  height: calc(100% - 88px);
+  margin-top: 80px;
+  overflow-y: scroll;
+  // background: #DDD;
+}
+
+.row {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.pag-1,
+.pag-2 {
+  width: 50%;
+  height: 100%;
+  background: #fdfdfd;
+  box-shadow: 0px 0px 14px 1px #ddd;
+  position: absolute;
+  transform: translate(50%, 0%);
+}
+.pag-1 {
+  left: 20px;
+  transform: translate(50%, 2%);
+}
+.left--base {
+  position: absolute;
+  transform: rotate(-40deg);
+  top: 36px;
+  & > div:first-child {
+    width: 109px;
+    height: 10px;
+    border-radius: 20px;
+    background: linear-gradient(-45deg, $secondary, transparent);
+  }
+  & > div:last-child {
+    width: 70px;
+    height: 10px;
+    border-radius: 20px;
+    background: linear-gradient(-45deg, $secondary, transparent);
+    margin-top: 4px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 110px;
+  &:hover > .add-photo {
+    visibility: visible;
+  }
+}
+
+.add-photo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  color: #fdfdfd;
+  visibility: hidden;
+}
+.bd-job {
+  padding: 0px 10px 0px 10px;
+}
+.bd-txt {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 4px;
+}
+.bd--area {
+  display: flex;
+  margin-top: 6px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Source Sans Pro", sans-serif;
+}
+.bd--area > textarea {
+  width: 80%;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Source Sans Pro", sans-serif;
+  resize: none;
+  overflow-y: scroll;
+}
+.bd--area > #requisits{
+  margin-left: 11px;
+}
+.bd--area > #benefits{
+  margin-left: 16px;
+}
+.bd--area > #note{
+  margin-left: 32px;
+}
+.btn {
+  width: 40%;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  & > button {
+    width: 100%;
+    height: 45px;
+    border: none;
+    font-size: 19px;
+    font-weight: 800;
+    color: #FFF;
+    background: $ligth;
+    transition: linear 0.5s;
+    cursor: pointer;
+    &:hover,
+    &:focus,
+    &:active {
+      background: $secondary;
+      box-shadow: 0px 0px 14px 0px #a09e9e;
+    }
+  }
 }
 
 /* width */
